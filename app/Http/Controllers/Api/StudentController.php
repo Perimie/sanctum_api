@@ -35,7 +35,7 @@ class StudentController extends Controller
         //response
         return response()->json([
             'status' => 'success', 
-            'message' => 'Student registered successfully'   
+            'message' => 'User registered successfully'   
         ]);
     }
 
@@ -71,7 +71,7 @@ class StudentController extends Controller
 
         return response()->json([
           'status' =>'failed',
-          'message' => "Student doesn't exist",
+          'message' => "User doesn't exist",
         ]);
     }
 
@@ -91,6 +91,12 @@ class StudentController extends Controller
     //student logout (get)
     public function logout(){
 
+        auth()->user()->tokens()->delete();
+
+        return response()->json([
+         'status' => 'Success',
+         'message' => 'Logout successfully'
+        ]);
     }
 
 

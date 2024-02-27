@@ -27,8 +27,8 @@ Route::post('login', [StudentController::class,'login']);
 Route::group(['middleware' => ['auth:sanctum']],
 function (){
     Route::get('profile', [StudentController::class,'profile']);
-    Route::get('logout', [ProjectController::class,'logout']);
-
+    Route::get('logout', [StudentController::class,'logout']);
+//--end
 
 
     //project Route
@@ -36,4 +36,5 @@ function (){
     Route::get('get-ProjectList', [ProjectController::class,'getProjectList']);
     Route::get('get-SingleProject/{id}', [ProjectController::class,'getSingleProject']);
     Route::delete('delete-Project/{id}', [ProjectController::class,'deleteProject']);
+    //--end
 });
