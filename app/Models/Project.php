@@ -10,7 +10,7 @@ class Project extends Model
     use HasFactory;
 
     public $timestamps = false;
-
+    public $table='project';
     public $fillable = [
         'student_id',
         'title',

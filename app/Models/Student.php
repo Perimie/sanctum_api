@@ -11,7 +11,7 @@ class Student extends Model
     use HasFactory, HasApiTokens;
 
     public $timestamps = false;
-
+    
     public $fillable =[
         'name',
         'email',
